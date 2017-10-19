@@ -1,0 +1,25 @@
+package com.project2.tests;
+
+import org.junit.Test;
+import org.springframework.web.client.RestTemplate;
+import com.project2.models.Car;
+
+
+public class ConnectionTests {
+	
+	
+	@Test(timeout=3000)
+	public void testPrintMessage() {	
+		RestTemplate restTemplate = new RestTemplate();
+		Car car = new Car();
+		 car.setNumberPlate("Test");
+		 car.setMake("Test");
+		 car.setFuel("Test");
+		 car.setEmail("test@test.com");
+		 car.setMot("2018-1-1");
+		 
+		 
+		 
+	}
+
+}

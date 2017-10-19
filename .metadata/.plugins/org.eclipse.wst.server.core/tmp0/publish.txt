@@ -1,0 +1,4 @@
+#Tomcat publish data
+#Thu Oct 12 16:45:47 BST 2017
+org.eclipse.jst.j2ee.server\:/binary\:C\:\\Users\\Victor\\.m2\\repository\\org\\springframework\\spring-web\\5.0.0.RELEASE\\spring-web-5.0.0.RELEASE.jar=C\:\\Users\\Victor\\Documents\\JusIt\\sts-bundle\\pivotal-tc-server-developer-3.2.6.RELEASE\\base-instance\\wtpwebapps\\ProjectMVC\\WEB-INF\\lib\\spring-web-5.0.0.RELEASE.jar
+org.eclipse.jst.j2ee.server\:ProjectMVC=C\:\\Users\\Victor\\Documents\\JusIt\\sts-bundle\\pivotal-tc-server-developer-3.2.6.RELEASE\\base-instance\\wtpwebapps\\ProjectMVC

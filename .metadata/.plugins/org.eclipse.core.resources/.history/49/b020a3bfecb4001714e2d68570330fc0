@@ -1,0 +1,20 @@
+package com.project2.tests;
+
+import static org.junit.Assert.assertTrue;
+
+import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.project2.repository.CarDAO;
+
+public class ConnectionTests {
+	@Autowired
+    CarDAO cardao;
+	@Test
+	public void testPrintMessage() {	
+	    
+		 assertTrue(1 > 0);
+		 
+	}
+
+}
