@@ -1,12 +1,23 @@
 package com.project2.models;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+
 public class Car {
 	private int id;
+	@NotEmpty
 	private String numberPlate;
+	@NotNull
 	private String make;
+	@NotNull
 	private String fuel;
+	@NotEmpty
 	private String mot;
+	@NotEmpty
+	@Email
 	private String email;
+		
 	public int getId() {
 		return id;
 	}

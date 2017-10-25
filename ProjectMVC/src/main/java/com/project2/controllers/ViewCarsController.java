@@ -4,9 +4,11 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -36,7 +38,10 @@ public class ViewCarsController {
 	//save new car form	
 	
 	@RequestMapping(value="/savecar", method = RequestMethod.POST)
-	public ModelAndView saveCars(@ModelAttribute("savecarform") Car car) {
+	public ModelAndView saveCars(@Valid @ModelAttribute("savecarform") Car car, BindingResult result) {
+		 if (result.hasErrors()) {
+	            return new ModelAndView("/addcar"); 
+	        }
 		cardao.saveCar(car);
 		return new ModelAndView("redirect:/viewcars.html"); 
 	}
@@ -60,9 +65,13 @@ public class ViewCarsController {
 	
 	//save changes made on existing car
 	@RequestMapping(value= "/savechange", method = RequestMethod.POST)
-	public ModelAndView editsave(@ModelAttribute("editcarform") Car car){  
-       cardao.updateCar(car);  
-       return new ModelAndView("redirect:/viewcars");  
+	public ModelAndView editsave(@ModelAttribute("editcarform") Car car, BindingResult result){  
+		/*if (result.hasErrors()) {
+				return new ModelAndView("editcar"); 
+        }*/
+	   cardao.updateCar(car);  
+       return new ModelAndView("redirect:/viewcars"); 
+		
     }  
 	
 	//search car after make

@@ -12,6 +12,11 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>  
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%> 
 <title>Edit car</title>
+<style>
+    .error {
+        color: red; font-weight: bold;
+    }
+ </style>
 </head>
 <body style="background-color: #E6E6FA; font-family: 'Open Sans', sans-serif;">
 <div class="container">
@@ -23,8 +28,9 @@
        
        <div class="form-group"> 
          	<label  for="numbePlate">Number plate :</label>
-          	<form:input path="numberPlate"  id="numberPlate"  type="text" class="form-control"/>  
-		</div>
+          	<form:input path="numberPlate"  id="numberPlate"  type="text" class="form-control"/>
+          	<form:errors path="numberPlate"  cssClass="error"/> 
+       </div>
 		
 		 <div class="form-group"> 
         	<label  for="fuel">Fuel:</label>
@@ -34,17 +40,20 @@
          	<option>Diesel</option>
          	<option>Petrol</option>
          	</form:select>
+         	<form:errors path="fuel"  cssClass="error"/>
         </div>
         
         <div class="form-group"> 
         	<label  for="mot">MOT valid till:</label>
         	<form:input path="mot"  id="mot"  type="Date"  class="form-control"/>
-        </div>
+        	<form:errors path="mot"  cssClass="error"/>
+       </div>
                   
-         <div class="form-group"> 
+       <div class="form-group"> 
         	<label  for="email">Owner email address:</label>
         	<form:input path="email"  id="mot" type="text" class="form-control"/>
-        </div>
+        	 <form:errors path="email"  cssClass="error"/>
+       </div>
         <button type="submit" class="btn btn-default">Save changes</button>
        </form:form>
        <div class="col-sm-4"></div>

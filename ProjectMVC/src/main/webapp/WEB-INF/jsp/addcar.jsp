@@ -12,6 +12,11 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Add a new car</title>
+<style>
+    .error {
+        color: red; font-weight: bold;
+    }
+ </style>
 </head>
 <body style="background-color: #E6E6FA; font-family: 'Open Sans', sans-serif;">
   
@@ -23,7 +28,8 @@
 
 	<div class="form-group"> 
        		<label  for="numberPlate" >Number plate :</label>
-         	<form:input path="numberPlate"   id="numberPlate" class="form-control" type="text" placeholder="Number Plate"  required="required" />
+         	<form:input path="numberPlate"   id="numberPlate" class="form-control" type="text" placeholder="Number Plate" />
+			<form:errors path="numberPlate"  cssClass="error"/>
 	</div>
 
 	<div class="form-group"> 
@@ -100,6 +106,7 @@
 <option >Volkswagen</option>
 <option >Volvo</option>
 </form:select>
+<form:errors path="make"  cssClass="error"/>
 </div>
   	
 	<div class="form-group"> 
@@ -110,16 +117,19 @@
          <option>Diesel</option>
          <option>Petrol</option>
          </form:select>
+         <form:errors path="fuel"  cssClass="error"/>
 	</div>
   	
   	<div class="form-group"> 
         <label  for="mot"> MOT valid till :</label>
-         <form:input  path="mot"  id="mot" class="form-control"  type="Date" min="2018-01-01"  placeholder="yyyy-mm-dd" required="required"/>
+         <form:input  path="mot"  id="mot" class="form-control"  type="Date" min="2018-01-01"  placeholder="yyyy-mm-dd"/>
+  		<form:errors path="mot"  cssClass="error"/>
   	</div>
   	
   	<div class="form-group"> 
         <label  for="email">Owners email address :</label>
-        <form:input path="email"  id="email" class="form-control"  type="text" placeholder="address@email.com" required="required"/>
+        <form:input path="email"  id="email" class="form-control"  type="text" placeholder="address@email.com"/>
+  		<form:errors path="email"  cssClass="error"/>
   	</div>
 	<button type="submit" class="btn btn-default">Save car</button>
 </form:form>
