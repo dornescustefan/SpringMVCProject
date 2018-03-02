@@ -1,5 +1,6 @@
 package com.project2.controllers;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -13,9 +14,11 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.project2.models.Car;
+import com.project2.models.CarList;
 import com.project2.repository.ICarDao;
 
 @Controller
@@ -95,4 +98,18 @@ public class ViewCarsController {
 	    List<Car> petrolCarList=cardao.findPetrolCars();  
 	   	return new ModelAndView("viewcars","carslist", petrolCarList); 
 	    }
+	
+	//return car list
+	@RequestMapping(value = "/carlist", method = RequestMethod.GET)
+	public @ResponseBody List<CarList> findAllCarMakes() {
+		//return exerciseService.findAllActivities();
+		List<CarList> carList = new ArrayList<CarList>();
+		CarList alfa = new CarList();
+		alfa.setMake("Alfa Romeo");
+		
+		CarList audi = new CarList();
+		audi.setMake("Audi");
+		
+		return carList;
+	}
 }

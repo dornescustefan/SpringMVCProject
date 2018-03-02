@@ -17,6 +17,30 @@
         color: red; font-weight: bold;
     }
  </style>
+ 
+ <script type="text/javascript" src="jquery-3.3.1.js"></script>
+ 
+<script type="text/javascript">
+		$(document).ready(
+			function() {
+				$.getJSON('http://localhost:8080/ProjectMVC/carmakeslist.json', {
+					ajax : 'true'
+				}, function(data){
+					var html = '<option selected disabled >--Please select a car make--</option>';
+					var len = data.length;
+					for (var i = 0; i < len; i++) {
+						html += '<option value="' + data[i].make + '">'
+								+ data[i].make + '</option>';
+					}
+					html += '</option>';
+					
+					$('#make').html(html);
+				});
+				
+			});
+		
+	</script>
+
 </head>
 <body style="background-color: #E6E6FA; font-family: 'Open Sans', sans-serif;">
   
@@ -34,8 +58,9 @@
 
 	<div class="form-group"> 
         <label  for="make">Make :</label>
+        <form:select path="make" id="make" class="form-control"  type="text"/>
          <!--<form:input  path="make"  id="make" class="form-control"  type="text" placeholder="Make"/>-->
- <form:select path="make" id="make" class="form-control"  type="text">
+  <!--<form:select path="make" id="make" class="form-control"  type="text">
 <option selected disabled >--Please select a car make--</option>
 <option >Alfa Romeo</option>
 <option >Aston Martin</option>
@@ -105,7 +130,7 @@
 <option >Vauxhall</option>
 <option >Volkswagen</option>
 <option >Volvo</option>
-</form:select>
+</form:select>-->
 <form:errors path="make"  cssClass="error"/>
 </div>
   	

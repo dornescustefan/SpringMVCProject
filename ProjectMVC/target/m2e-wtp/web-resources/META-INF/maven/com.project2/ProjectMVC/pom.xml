@@ -8,6 +8,7 @@
   <name>ProjectMVC Maven Webapp</name>
   <url>http://maven.apache.org</url>
   <dependencies>
+
     <!-- https://mvnrepository.com/artifact/junit/junit -->
 <dependency>
     <groupId>junit</groupId>
@@ -15,7 +16,6 @@
     <version>4.12</version>
     <scope>test</scope>
 </dependency>
-
     
     <!-- https://mvnrepository.com/artifact/org.springframework/spring-test -->
 <dependency>
@@ -24,7 +24,6 @@
     <version>5.0.0.RELEASE</version>
     <scope>test</scope>
 </dependency>
-    
     
     <!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
 <dependency>
@@ -85,9 +84,32 @@
     <version>6.0.3.Final</version>
 </dependency>
 
+<!-- Jackson  -->
+<dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-databind</artifactId>
+        <version>2.9.1</version>
+</dependency>
+<dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-core</artifactId>
+        <version>2.9.1</version>
+ </dependency>
+ <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-annotations</artifactId>
+        <version>2.9.1</version>
+ </dependency>
 
- </dependencies>
+<!-- Jackson JSON Mapper -->
+		<!-- https://mvnrepository.com/artifact/org.codehaus.jackson/jackson-mapper-asl -->
+<dependency>
+    <groupId>org.codehaus.jackson</groupId>
+    <artifactId>jackson-mapper-asl</artifactId>
+    <version>1.9.13</version>
+</dependency>
 
+</dependencies>
   <build>
     <finalName>ProjectMVC</finalName>
   </build>
