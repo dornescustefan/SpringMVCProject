@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>    
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>   
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>  
    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>       
 <html>
 <head>
@@ -18,12 +19,10 @@
     }
  </style>
  
- <script type="text/javascript" src="jquery-3.3.1.js"></script>
- 
 <script type="text/javascript">
 		$(document).ready(
 			function() {
-				$.getJSON('http://localhost:8080/ProjectMVC/carmakeslist.json', {
+				$.getJSON('<spring:url value="carmakeslist.json"/>', {
 					ajax : 'true'
 				}, function(data){
 					var html = '<option selected disabled >--Please select a car make--</option>';
