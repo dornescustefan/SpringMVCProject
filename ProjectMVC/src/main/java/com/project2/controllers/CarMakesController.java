@@ -1,33 +1,23 @@
 package com.project2.controllers;
 
-import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.project2.models.CarList;
+import com.project2.models.Car;
+import com.project2.repository.ICarDao;
 
 @RestController
 public class CarMakesController {
+	 @Autowired
+	 ICarDao cardao;
+	
 	@RequestMapping(value="carmakeslist", method = RequestMethod.GET)
-	public List<CarList> getCarMakes(){
-		List<CarList>  carMakes= new ArrayList<CarList>();
-		
-		CarList car1 = new CarList();
-		car1.setMake("Honda");
-		
-		CarList car2 = new CarList();
-		car2.setMake("BMW");
-				
-		CarList car3 = new CarList();
-		car3.setMake("Volvo");
-				
-		carMakes.add(car1);
-		carMakes.add(car2);
-		carMakes.add(car3);
-						
+	public List<Car> getCarMakes(){
+		List<Car>  carMakes= cardao.getAllCarMakesRowMapper(); ;
 		return carMakes;
 		}
 }

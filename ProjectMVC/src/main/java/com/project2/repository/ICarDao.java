@@ -26,4 +26,6 @@ public interface ICarDao {
 	
 	List<Car> findPetrolCars();
 
+	List<Car> getAllCarMakesRowMapper();
+
 }

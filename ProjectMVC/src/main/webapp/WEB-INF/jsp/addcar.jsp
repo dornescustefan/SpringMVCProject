@@ -38,8 +38,7 @@
 				});
 				
 			});
-		
-	</script>
+</script>
 
 </head>
 <body style="background-color: #E6E6FA; font-family: 'Open Sans', sans-serif;">
@@ -59,80 +58,8 @@
 	<div class="form-group"> 
         <label  for="make">Make :</label>
         <form:select path="make" id="make" class="form-control"  type="text"/>
-         <!--<form:input  path="make"  id="make" class="form-control"  type="text" placeholder="Make"/>-->
-  <!--<form:select path="make" id="make" class="form-control"  type="text">
-<option selected disabled >--Please select a car make--</option>
-<option >Alfa Romeo</option>
-<option >Aston Martin</option>
-<option >Audi</option>
-<option >Bentley</option>
-<option >Benz</option>
-<option >BMW</option>
-<option >Bugatti</option>
-<option >Cadillac</option>
-<option >Chevrolet</option>
-<option >Chrysler</option>
-<option >Citroen</option>
-<option >Corvette</option>
-<option >DAF</option>
-<option >Dacia</option>
-<option >Daewoo</option>
-<option >Daihatsu</option>
-<option >Datsun</option>
-<option >De Lorean</option>
-<option >Dino</option>
-<option >Dodge</option>
-<option >Farboud</option>
-<option >Ferrari</option>
-<option >Fiat</option>
-<option >Ford</option>
-<option >Honda</option>
-<option >Hummer</option>
-<option >Hyundai</option>
-<option >Jaguar</option>
-<option >Jeep</option>
-<option >KIA</option>
-<option >Koenigsegg</option>
-<option >Lada</option>
-<option >Lamborghini</option>
-<option >Lancia</option>
-<option >Land Rover</option>
-<option >Lexus</option>
-<option >Ligier</option>
-<option >Lincoln</option>
-<option >Lotus</option>
-<option >Martini</option>
-<option >Maserati</option>
-<option >Maybach</option>
-<option >Mazda</option>
-<option >McLaren</option>
-<option >Mercedes</option>
-<option >Mercedes-Benz</option>
-<option >Mini</option>
-<option >Mitsubishi</option>
-<option >Nissan</option>
-<option >Noble</option>
-<option >Opel</option>
-<option >Peugeot</option>
-<option >Pontiac</option>
-<option >Porsche</option>
-<option >Renault</option>
-<option >Rolls-Royce</option>
-<option >Rover</option>
-<option >Saab</option>
-<option >Seat</option>
-<option >Skoda</option>
-<option >Smart</option>
-<option >Spyker</option>
-<option >Subaru</option>
-<option >Suzuki</option>
-<option >Toyota</option>
-<option >Vauxhall</option>
-<option >Volkswagen</option>
-<option >Volvo</option>
-</form:select>-->
-<form:errors path="make"  cssClass="error"/>
-</div>
+		<form:errors path="make"  cssClass="error"/>
+	</div>
   	
 	<div class="form-group"> 
         <label  for="fuel">Fuel :</label>

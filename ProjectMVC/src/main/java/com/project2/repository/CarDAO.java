@@ -108,6 +108,18 @@ public List<Car> findPetrolCars(){
 	return petrolCars;
 	}
 
+//Car Make list for REST services
+public List<Car> getAllCarMakesRowMapper() {
+	String sql ="select * from carmakes;";
+	 return jdbcTemplate.query(sql,new RowMapper<Car>(){  
+		 public Car mapRow(ResultSet resultset, int rownumber) throws SQLException { 
+			Car carMakes=new Car();  
+	        carMakes.setId(resultset.getInt("idcarmakes"));
+	        carMakes.setMake(resultset.getString("carmake"));
+	        return carMakes;  
+	     }});
+}
+
 
 
 }
