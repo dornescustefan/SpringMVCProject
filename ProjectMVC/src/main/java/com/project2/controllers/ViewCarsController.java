@@ -38,7 +38,7 @@ public class ViewCarsController {
 	
 	//save new car form	
 	@RequestMapping(value="/savecar", method = RequestMethod.POST)
-	public ModelAndView saveCars(@Valid @ModelAttribute("savecarform") Car car, BindingResult result) {
+	public  ModelAndView saveCars(@Valid @ModelAttribute("savecarform") Car car, BindingResult result) {
 		 if (result.hasErrors()) {
 	            return new ModelAndView("/addcar"); 
 	        }
@@ -66,9 +66,9 @@ public class ViewCarsController {
 	//save changes made on existing car
 	@RequestMapping(value= "/savechange", method = RequestMethod.POST)
 	public ModelAndView editsave(@ModelAttribute("editcarform") Car car, BindingResult result){  
-		/*if (result.hasErrors()) {
+		if (result.hasErrors()) {
 				return new ModelAndView("editcar"); 
-        }*/
+        }
 	   cardao.updateCar(car);  
        return new ModelAndView("redirect:/viewcars"); 
        }  

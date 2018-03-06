@@ -3,6 +3,7 @@ package com.project2.repository;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
+
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
@@ -81,8 +82,9 @@ public int saveCar(Car car){
 			   		+car.getMake()+"','"
 			   		+car.getFuel()+"','"
 			   		+car.getMot()+"','"
-			   		+car.getEmail()+"')";  
+			   		+car.getEmail()+"')";
 	   return jdbcTemplate.update(sql);
+		 
 	} 
 //Search a car make
 public List<Car> findMake(String make){
