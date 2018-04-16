@@ -10,8 +10,10 @@ public class Car {
 	private String numberPlate;
 	@NotNull
 	private String make;
+	@NotEmpty
 	@NotNull
 	private String fuel;
+	@NotNull
 	@NotEmpty
 	private String mot;
 	@NotEmpty

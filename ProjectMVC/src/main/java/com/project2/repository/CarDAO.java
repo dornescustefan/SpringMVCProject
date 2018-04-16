@@ -13,7 +13,6 @@ import com.project2.models.Car;
 public class CarDAO implements ICarDao {
 	
 	JdbcTemplate jdbcTemplate;
-
 	/* (non-Javadoc)
 	 * @see com.project2.repository.ICarDao#setJdbcTemplate(org.springframework.jdbc.core.JdbcTemplate)
 	 */
@@ -120,9 +119,13 @@ public List<Car> getAllCarMakesRowMapper() {
 	        carMakes.setMake(resultset.getString("carmake"));
 	        return carMakes;  
 	     }});
-}
+	}
 
-
-
+//Car By Number Plate 
+public List<Car> getAllCarByNumberPlate(String numberPlate) {
+	String sql = "SELECT * FROM car_list where number_plate='" +numberPlate+"'";
+	List<Car> cars = jdbcTemplate.query(sql,BeanPropertyRowMapper.newInstance(Car.class));
+		return cars;
+	}
 }
 

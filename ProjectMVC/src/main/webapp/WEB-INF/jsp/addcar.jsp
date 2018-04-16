@@ -37,6 +37,12 @@
 				});
 				
 			});
+		
+		function upperCase(a){
+		    setTimeout(function(){
+		        a.value = a.value.toUpperCase();
+		    }, 1);
+		}	
 </script>
 
 </head>
@@ -50,7 +56,7 @@
 
 	<div class="form-group"> 
        		<label  for="numberPlate" >Number plate :</label>
-         	<form:input path="numberPlate"   id="numberPlate" class="form-control" type="text" placeholder="Number Plate" />
+         	<form:input path="numberPlate"   id="numberPlate" class="form-control" type="text" placeholder="Number Plate" onkeydown="upperCase(this)" />
 			<form:errors path="numberPlate"  cssClass="error"/>
 	</div>
 
@@ -82,7 +88,7 @@
         <form:input path="email"  id="email" class="form-control"  type="text" placeholder="address@email.com"/>
   		<form:errors path="email"  cssClass="error"/>
   	</div>
-	<button type="submit" class="btn btn-default">Save car</button>
+	<button type="submit" class="btn btn-primary">Save car</button>
 </form:form>
 </div> 
 <div class="col-sm-4"></div>

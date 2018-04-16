@@ -17,18 +17,26 @@
         color: red; font-weight: bold;
     }
  </style>
+ <script>
+ function upperCase(a){
+	    setTimeout(function(){
+	        a.value = a.value.toUpperCase();
+	    }, 1);
+	}
+ </script>
+ 
 </head>
 <body style="background-color: #E6E6FA; font-family: 'Open Sans', sans-serif;">
 <div class="container">
 <div class="col-sm-4"></div>
 <div class="col-sm-4">
  <h1>Edit car data</h1>  
-     <form:form action ="savechange" modelAttribute="editcarform" >
+     <form:form action ="savechanges" modelAttribute="editcarform" method="POST" >
      <form:input path="Id"  id="Id"  type="hidden"/>
        
        <div class="form-group"> 
          	<label  for="numbePlate">Number plate :</label>
-          	<form:input path="numberPlate"  id="numberPlate"  type="text" class="form-control"/>
+          	<form:input path="numberPlate"  id="numberPlate"  type="text" class="form-control" onkeydown="upperCase(this)"/>
           	<form:errors path="numberPlate"  cssClass="error"/> 
        </div>
 		
@@ -54,7 +62,7 @@
         	<form:input path="email"  id="mot" type="text" class="form-control"/>
         	 <form:errors path="email"  cssClass="error"/>
        </div>
-        <button type="submit" class="btn btn-default">Save changes</button>
+        <button type="submit" class="btn btn-warning">Save changes</button>
        </form:form>
        <div class="col-sm-4"></div>
 </div>

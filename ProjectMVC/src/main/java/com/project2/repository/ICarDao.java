@@ -28,4 +28,6 @@ public interface ICarDao {
 
 	List<Car> getAllCarMakesRowMapper();
 
+	List<Car> getAllCarByNumberPlate(String numberPlate);
+
 }

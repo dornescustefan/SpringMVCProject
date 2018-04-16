@@ -64,8 +64,8 @@ public class ViewCarsController {
 	}
 	
 	//save changes made on existing car
-	@RequestMapping(value= "/savechange", method = RequestMethod.POST)
-	public ModelAndView editsave(@ModelAttribute("editcarform") Car car, BindingResult result){  
+	@RequestMapping(value= "/savechanges", method = RequestMethod.POST)
+	public ModelAndView editsave( @ModelAttribute("editcarform") Car car, BindingResult result){  
 		if (result.hasErrors()) {
 				return new ModelAndView("editcar"); 
         }
@@ -94,4 +94,11 @@ public class ViewCarsController {
 	    List<Car> petrolCarList=cardao.findPetrolCars();  
 	   	return new ModelAndView("viewcars","carslist", petrolCarList); 
 	    }
+	//Search cars by number plate
+	@RequestMapping(value="searchnumberplate", method = RequestMethod.GET)
+	public ModelAndView getCarByNumberPlate(HttpServletRequest request, HttpServletResponse response){
+		String searchedNumberPlate = request.getParameter("searchedValue");
+		List<Car>  carByNumberPlate= cardao.getAllCarByNumberPlate(searchedNumberPlate); ;
+		return  new ModelAndView("viewcars", "carslist", carByNumberPlate);
+		}
 }
