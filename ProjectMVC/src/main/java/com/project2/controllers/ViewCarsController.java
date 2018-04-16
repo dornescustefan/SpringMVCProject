@@ -65,12 +65,12 @@ public class ViewCarsController {
 	
 	//save changes made on existing car
 	@RequestMapping(value= "/savechanges", method = RequestMethod.POST)
-	public ModelAndView editsave( @ModelAttribute("editcarform") Car car, BindingResult result){  
+	public String editsave(@ModelAttribute("editcarform") Car car, BindingResult result){  
 		if (result.hasErrors()) {
-				return new ModelAndView("editcar"); 
+				return "editcar"; 
         }
 	   cardao.updateCar(car);  
-       return new ModelAndView("redirect:/viewcars"); 
+       return "redirect:/viewcars"; 
        }  
 	
 	//search car after make

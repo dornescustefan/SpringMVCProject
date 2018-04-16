@@ -46,7 +46,7 @@
        			Diesel cars
        		</button>
        	</a>
-       <form action="searchnumberplate" class="navbar-form navbar-right">
+       <form action="searchnumberplate" class="navbar-form navbar-left">
       		<div class="form-group">
         		<input name="searchedValue"  type="text"  class="form-control" placeholder="Search number plate">
                	<button type="submit" class="btn btn-primary " >Search</button>

@@ -67,6 +67,7 @@ public Car getCarById(int id){
  */
 //Update Car details
 public int updateCar(Car car){  
+		
 	    return jdbcTemplate.update("update car_list set number_plate = ?, fuel = ?, mot=?, email=? where ID=?",
 	    car.getNumberPlate(), car.getFuel(), car.getMot(), car.getEmail(), car.getId());
 	}  
