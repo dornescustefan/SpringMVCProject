@@ -14,7 +14,11 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 		<title>Fleet manager</title>
 	<script type="text/javascript">
-	
+	function upperCase(a){
+	    setTimeout(function(){
+	        a.value = a.value.toUpperCase();
+	    }, 1);
+	}	
 	</script>
 	</head>
 <body style="background-color: #E6E6FA; font-family: 'Open Sans', sans-serif;">
@@ -48,7 +52,7 @@
        	</a>
        <form action="searchnumberplate" class="navbar-form navbar-left">
       		<div class="form-group">
-        		<input name="searchedValue"  type="text"  class="form-control" placeholder="Search number plate">
+        		<input name="searchedValue"  type="text"  class="form-control" placeholder="Search number plate" onkeydown="upperCase(this)">
                	<button type="submit" class="btn btn-primary " >Search</button>
             </div>	
     	</form>
